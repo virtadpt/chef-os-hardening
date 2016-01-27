@@ -15,7 +15,11 @@ execute 'generate_audit_rules' do
 end
 
 execute 'make_auditd_rules_immutable' do
-    command 'echo "-e 2" >> /etc/audit.rules'
+    command 'echo "-e 2" >> /etc/audit/audit.rules'
     creates '/etc/audit/.auditd.locked'
+end
+
+service 'auditd' do
+    action [ :enable, :start ]
 end
 
