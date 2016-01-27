@@ -31,4 +31,9 @@ include_recipe('os-hardening::suid_sgid') if node['security']['suid_sgid']['enfo
 include_recipe('os-hardening::sysctl')
 include_recipe('os-hardening::audit')
 include_recipe('os-hardening::logrotate')
+
+# Commented out because I don't have a good way of merging files yet, or of
+# making them distro-independent.
+#include_recipe('os-hardening::module_blacklist')
+
 include_recipe('os-hardening::aide')
