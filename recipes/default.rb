@@ -29,3 +29,4 @@ include_recipe('os-hardening::profile')
 include_recipe('os-hardening::securetty')
 include_recipe('os-hardening::suid_sgid') if node['security']['suid_sgid']['enforce']
 include_recipe('os-hardening::sysctl')
+include_recipe('os-hardening::aide')
