@@ -36,4 +36,5 @@ include_recipe('os-hardening::logrotate')
 # making them distro-independent.
 #include_recipe('os-hardening::module_blacklist')
 
+include_recipe('os-hardening::pwquality')
 include_recipe('os-hardening::aide')
