@@ -37,4 +37,5 @@ include_recipe('os-hardening::logrotate')
 #include_recipe('os-hardening::module_blacklist')
 
 include_recipe('os-hardening::pwquality')
+include_recipe('os-hardening::etcskel')
 include_recipe('os-hardening::aide')
