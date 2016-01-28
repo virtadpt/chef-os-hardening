@@ -38,4 +38,12 @@ include_recipe('os-hardening::logrotate')
 
 include_recipe('os-hardening::pwquality')
 include_recipe('os-hardening::etcskel')
+
+# Commented out because sshd has jumped a couple of crucial release numbers
+# between RHEL6 and RHEL7, and consequently the configuration files are
+# sufficiently different that things break.  This is going to need to be
+# versionized.
+#include_recipe('os-hardening::ssh')
+
 include_recipe('os-hardening::aide')
+

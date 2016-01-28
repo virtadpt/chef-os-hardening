@@ -5,7 +5,7 @@ directory '/etc/skel/.ssh' do
     group 'root'
 end
 
-directory '/etc/skel/.ssh/authorized_keys' do
+file '/etc/skel/.ssh/authorized_keys' do
     mode '0600'
     owner 'root'
     group 'root'
