@@ -12,5 +12,15 @@ file '/etc/ssh/sshd_banner' do
     mode '0644'
     owner 'root'
     group 'root'
+    only_if { platform_family?('rhel') || platform_family('centos')}
+    only_if { node['platform_version'].to_f >= 7.0 }
+end
+
+file '/etc/ssh/this_is_not_sshd_banner' do
+    mode '0644'
+    owner 'root'
+    group 'root'
+    only_if { platform_family?('rhel') || platform_family('centos')}
+    only_if { node['platform_version'].to_f >= 6.0 && node['platform_version'].to_f < 7.0 }
 end
 
