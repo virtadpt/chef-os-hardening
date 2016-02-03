@@ -93,7 +93,7 @@ when 'debian'
   end
 
 # do config for rhel-family
-when 'rhel', 'fedora'
+when 'rhel', 'fedora', 'centos'
 
   # we do not allow to use authconfig, because it does not use the /etc/sysconfig/authconfig as a basis
   # therefore we edit /etc/pam.d/system-auth-ac/
@@ -110,6 +110,7 @@ when 'rhel', 'fedora'
     # get the package for strong password checking
     package 'pam-passwdqc' do
       package_name node['packages']['pam_passwdqc']
+      only_if { node['platform_version'].to_f < 7.0 }
     end
 
   # deactivate passwdqc
